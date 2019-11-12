@@ -12,4 +12,5 @@ SELECT
 FROM assistance_requests a_r
 JOIN students s ON a_r.student_id = s.id
 JOIN teachers t ON a_r.student_id = t.id
-JOIN assignments a ON a_r.assignment_id = a.id;
+JOIN assignments a ON a_r.assignment_id = a.id
+ORDER BY request_duration;
