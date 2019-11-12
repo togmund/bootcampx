@@ -1,6 +1,6 @@
-SELECT c.name AS cohort_name, COUNT(s.*) AS student_count
+SELECT c.name AS cohort_name, COUNT(a_s.*) AS submission_count
 FROM cohorts c
 JOIN students s ON c.id = s.cohort_id
+JOIN assignment_submissions a_s ON s.id = a_s.student_id
 GROUP BY c.name
-HAVING COUNT(s.*) >= 18
-ORDER BY student_count ASC;
+ORDER BY submission_count DESC;
